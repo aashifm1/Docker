@@ -58,10 +58,29 @@ docker <things> ls  # things refers to image, container,cvolume etc
 
 ## How to bind mount?
 
-BInd mount is a concept of mounting the local storage to a Container  
+Bind mount is a concept of mounting the local storage to a Container  
 
 ```bash
 docker run -p 9002:5000 -v path\to\local_vault:/calci-storage --name=calci-v1 calculator  
 ```
 
 > For any reference, watch this detailed video: https://youtu.be/i8vnIi08UxQ
+
+## How to tag them?
+
+Need to sign in to docker and gget a username. The tagging is the crucial part thats how others can pull our docker image.
+
+```bash
+docker tag image-name username/folder-name 
+```
+
+<img width="850" height="420" alt="image" src="https://github.com/user-attachments/assets/d9b49103-2f14-413d-a5cf-304ede0a31c0" />
+
+
+To pull my docker image, run the below command.
+
+```bash
+# docker pull image-name username/folder-name
+docker pull calculator aashifm/calculator
+```
+<img width="1919" height="554" alt="image" src="https://github.com/user-attachments/assets/f10abe82-1985-459a-853c-fe90871dc7fc" />
