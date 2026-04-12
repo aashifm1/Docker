@@ -31,7 +31,7 @@ This will build the docker image
 Running the image will run on a container which is created on the execution of the image
 
 ```bash
-docker run -p 9002:5000 --name=container-name image-name
+# docker run -p 9002:5000 --name=container-name image-name
 
 docker run -p 9002:5000 --name=calci-v1 calculator 
 ```
@@ -40,14 +40,14 @@ It will run the image in http://localhost:9002
 ## How to Create the Docker Volume?
 
 ```bash
-docker volume create <volume-name>
+# docker volume create <volume-name>
 
 docker volume create calci-vol
 ```
 
 ### Run the Image in Container (With Volume)
 ```bash
-docker run -p 9002:5000 -v volume-name:/folder-name --name=whatever-name-you-want folder-name
+# docker run -p 9002:5000 -v volume-name:/folder-name --name=whatever-name-you-want folder-name
 
 docker run -p 9002:5000 -v calci-vol:/calci-storage --name=calci-v1 calculator 
 ```
@@ -77,10 +77,16 @@ docker tag image-name username/folder-name
 <img width="850" height="420" alt="image" src="https://github.com/user-attachments/assets/d9b49103-2f14-413d-a5cf-304ede0a31c0" />
 
 
-To pull my docker image, run the below command.
+### To pull my docker image, run the below command.
 
 ```bash
 # docker pull image-name username/folder-name
 docker pull calculator aashifm/calculator
 ```
 <img width="1919" height="554" alt="image" src="https://github.com/user-attachments/assets/f10abe82-1985-459a-853c-fe90871dc7fc" />
+
+### To remove the tag, run below command.
+```bash
+# docker rmi <image-name>:<tag>
+docker rmi calculator:latest
+```
